@@ -11,10 +11,12 @@ class Player:
         self.current_stats = self.base_stats # поставил как заглушку на данный момент
         self.current_hp = self.current_stats.max_health
         self.current_mana = self.current_stats.max_mana
+        self.actions = []
 
     def take_damage(self, amount: float):
-        reduce_damage = max(0, amount - self.base_stats.defense)
-        self.current_hp = max(0, self.current_hp - reduce_damage)
+        # reduce_damage = max(0, amount - self.base_stats.defense)
+        # self.current_hp = max(0, self.current_hp - reduce_damage)
+        self.current_hp -= amount
 
     def heal(self, amount: float):
         max_hp = self.current_stats.max_health
@@ -22,3 +24,17 @@ class Player:
     
     def is_alive(self) -> bool:
         return self.current_hp > 0
+    
+    def choose_action(self, target):
+        print(f"\n--- Ход игрока {self.nickname} ---")
+        for i, action in enumerate(self.actions):
+            print(f"{i + 1}) {action.name}")
+        
+        while True:
+            try:
+                choice = int(input("Выберите действие: ")) - 1
+                if 0 <= choice < len(self.actions):
+                    return self.actions[choice]
+            except ValueError:
+                pass
+            print("Неверный выбор, попробуйте еще раз.")
