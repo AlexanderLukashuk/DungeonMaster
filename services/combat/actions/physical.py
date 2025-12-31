@@ -1,4 +1,4 @@
-from services.combat.actions import Action
+from services.combat.actions.base_actions import Action
 
 
 class PhysicalAttack(Action):
