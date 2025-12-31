@@ -6,7 +6,7 @@ class Stats:
     max_mana: float
     attack_power: float # ближний бой
     magic_power: float # урон от магии
-    defense: float # уменьшение урона
+    defence: float # уменьшение урона
     agility: float # шанс уклониться / скорость атаки в будущем
     luck: float # шанс критического удара, шанс хорошей добычи
 
@@ -16,7 +16,7 @@ class Stats:
             max_mana=self.max_mana + other.max_mana,
             attack_power=self.attack_power + other.attack_power,
             magic_power=self.magic_power + other.magic_power,
-            defense=self.defense + other.defense,
+            defence=self.defence + other.defence,
             agility=self.agility + other.agility,
             luck=self.luck + other.luck
         )
@@ -27,7 +27,7 @@ class Stats:
             max_mana=self.max_mana * factor,
             attack_power=self.attack_power * factor,
             magic_power=self.magic_power * factor,
-            defense=self.defense * factor,
+            defence=self.defence * factor,
             agility=self.agility * factor,
             luck=self.luck * factor
         )
@@ -45,7 +45,7 @@ class Stats:
             max_mana=0,
             attack_power=0,
             magic_power=0,
-            defense=0,
+            defence=0,
             agility=0,
             luck=0
         )
