@@ -38,3 +38,8 @@ class Player:
             except ValueError:
                 pass
             print("Неверный выбор, попробуйте еще раз.")
+    
+    def __str__(self):
+        return (f"--- {self.nickname} (Уровень {self.level}) ---\n"
+                f"HP: {self.current_hp}/{self.current_stats.max_health}\n"
+                f"MP: {self.current_mana}/{self.current_stats.max_mana}")

@@ -22,3 +22,9 @@ class Enemy:
     def choose_action(self, target):
         import random
         return random.choice(self.actions)
+    
+    def __str__(self):
+        return (f"--- {self.name} (Уровень ) ---\n"
+                f"HP: {self.current_hp}/{self.current_stats.max_health}\n"
+                # f"MP: {self.current_mana}/{self.current_stats.max_mana}"
+                )
